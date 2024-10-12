@@ -1,20 +1,50 @@
-import '../styles/globals.css'
-import Head from "next/head"
-import type { AppProps } from 'next/app'
-import {NextUIProvider} from "@nextui-org/react"
+import "../styles/globals.css";
+import Head from "next/head";
+import type { AppProps } from "next/app";
+import { NextUIProvider } from "@nextui-org/react";
+import Script from 'next/script';
+
 function MyApp({ Component, pageProps }: AppProps) {
-  return(
-  <>
-    <Head>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous"/>
-    </Head>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossOrigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossOrigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossOrigin="anonymous"></script>
-    <NextUIProvider>
-    <Component {...pageProps} />
-    </NextUIProvider>
-  </>)
+  return (
+    <>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossOrigin="anonymous"
+        />
+      </Head>
+
+      {/* Load jQuery */}
+      <Script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossOrigin="anonymous"
+        strategy="beforeInteractive" // Load before other scripts
+      />
+
+      {/* Load Popper.js */}
+      <Script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossOrigin="anonymous"
+        strategy="beforeInteractive" // Load before other scripts
+      />
+
+      {/* Load Bootstrap JS */}
+      <Script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossOrigin="anonymous"
+        strategy="afterInteractive" // Load after other scripts
+      />
+
+      <NextUIProvider>
+        <Component {...pageProps} />
+      </NextUIProvider>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

@@ -112,7 +112,7 @@ export default function Search() {
               <p className="text-center font-semibold text-gray-700 mt-3">
                 {item.recipe.label}
               </p>
-              <a className="mx-auto" href={item.recipe.url} target="_blank">
+              <a className="mx-auto" href={item.recipe.url} target="_blank" rel="noreferrer">
                 <button className="mt-2 text-sm focus:outline-none bg-green-500 text-white py-1 px-4 rounded-md">
                   Show Recipe
                 </button>

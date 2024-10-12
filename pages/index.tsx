@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import Firstcomponent from '/components/Firstcomponent'
-import Items from '/components/Items'
-import Search from '/components/Search'
-import Inspiration from '/components/Inspiration'
-import Footer from '/components/Footer'
+import Firstcomponent from '../components/Firstcomponent'
+import Items from '../components/Items'
+import Search from '../components/Search'
+import Inspiration from '../components/Inspiration'
+import Footer from '../components/Footer'
 const Home: NextPage = () => {
   return (
   <>
