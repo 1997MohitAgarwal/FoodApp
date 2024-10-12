@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+.textnew{
+  font-family: 'Kalam', cursive;
+}
+.textneww{
+  font-family: 'Poppins', sans-serif;
+}
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  min-height:200vh;
+}
+a:link{
+  text-decoration:none;
+}
+.marginset{
+  margin-right:0.25rem;
+}
+.searchcontainer{
+  display:flex;
+  gap:6rem;
+  align-items:center;
+  background:linear-gradient(to bottom right,black,#03032b);
+}
+.block1{
+  flex-basis:40%;
+}
+.contain{
+  display:flex;
+  background-color:#ffffff
+}
+.image{
+  height:100%;
+  width:100%;
+}
+.touch{
+  transition:all ease-in 1s;
+}
+.touch:hover{
+  transform:scale(0.9);
+}
+@media screen and (max-width:1100px){
+  .block1{
+    flex-basis:50%;
+  }
+}
+@media screen and (max-width:1000px){
+ .searchcontainer{
+  display:flex;
+  gap:2rem;
+  align-items:center;
+  background-color:#312f2f;
+}
+}
+@media screen and (max-width:720px){
+  .contain{
+    display:flex;
+    flex-direction:column;
+  }
+}
+@media screen and (max-width:800px){
+  .searchcontainer{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+    align-items:center;
+    justify-content:center;
+    padding-bottom:2rem;
+   }
+  .widthset{
+    width:100vw;
+    height:50vh;
+  }
+  .text{
+    text-align:center;
+  }
+  .innercontainer{
+    align-items:center;
+  }
+  .marginset{
+    margin-right:0rem;
+  }
+}
